@@ -1,0 +1,33 @@
+---
+title: "My Map"
+author: "Martin Schulz"
+##date: "02/06/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 2 June 2019
+
+Just a map of my most visited locations.
+
+```{r map, message = FALSE}
+library(leaflet)
+
+locations <- data.frame(name = c("Home","Work","Gym","Favourite Cafe"),
+                        lat = c(-37.7966705,-37.8572731,-37.8192672,-37.8794246),
+                        lng = c(145.1788424,145.1716665,145.1790282,145.1643111))
+
+links <- c("<a href='https://en.wikipedia.org/wiki/Donvale,_Victoria'>My suburb</a>",
+           "<a href='https://www.worldvision.com.au/'>World Vision Australia</a>",
+           "<a href='https://www.elementfitness.com.au/'>Element Fitness Health Club</a>",
+           "<a href='http://http://mochajos.com.au//'>Mocha Jo's</a>")
+        
+locations %>%
+        leaflet() %>%
+        addTiles() %>%
+        addMarkers(clusterOptions = markerClusterOptions(), popup = links,
+                   label = locations$name)
+```
