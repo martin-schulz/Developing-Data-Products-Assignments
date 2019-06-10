@@ -1,0 +1,29 @@
+---
+title: "My Plotly Plot"
+author: "Martin Schulz"
+##date: "10/06/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 10 June 2019
+
+A 3D scatter plot visualisation of a few variables in the mtcars dataset.
+
+```{r plot, fig.height = 10, fig.width = 10, message = FALSE}
+library(plotly)
+
+plot_ly(x = ~mpg, y = ~disp, z = ~wt*1000, data = mtcars, type = "scatter3d", 
+        mode = "markers", color = ~cyl, name = "mtcars", hovertemplate = 
+                "MPG: %{x}\nDisplacement: %{y} cu. in.\nWeight: %{z} lbs") %>%
+        layout(title = "MTCars: Relationship between MPG, Displacement and Weight",
+               scene = list(xaxis = list(title = "MPG"),
+                            yaxis = list(title = "Displacement"),
+                            zaxis = list(title = "Weight")
+                            )
+               ) %>%
+        colorbar(title = "Cylinders")
+```
