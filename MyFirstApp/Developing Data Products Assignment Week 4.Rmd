@@ -1,0 +1,41 @@
+---
+title: "My Shiny App Documentation"
+author: "Martin Schulz"
+##date: "22/06/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+A map visualisation of the `quakes` dataset using the R `leaflet` library.
+
+For information on the data set please run `help(quakes)`.
+  
+### Map controls
+  
+* By default, all 1,000 earthquakes are displayed on the map.
+
+* Areas with multiple earthquakes are shown as clusters with the label showing 
+how many earthquakes occured in that area.
+
+* Using the zoom controls ("+" and "-" buttons in the top left corner) or 
+clicking on any cluster will zoom the map, splitting clusters into smaller 
+clusters or single markers, depending on the zoom level.
+
+* Clicking on a marker shows the following information:
+    + Record number in earthquake data set
+    + Richter Magnitude
+    + Depth in km
+
+### Slider controls  
+  
+* The number of earthquakes displayed on the map can be restricted by two 
+mterics using the slider controls on the left-hand side:
+    + Magnitude
+    + Depth
+
+* Please select the lower and upper limits of each metric by dragging the slider
+controls to the desired values, then click the "Submit" button to apply your 
+selection.
