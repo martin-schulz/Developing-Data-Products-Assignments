@@ -38,8 +38,21 @@ clusters or single markers, depending on the zoom level.
     + Richter Magnitude
     + Depth in km
 
-## The End {.flexbox .vcenter}
+## Summary of Earthquakes
 
-<div class="centered">
-<font size="7">Thank you</font>
-</div>
+The 1,000 earthquakes occurred mostly around a depth of under 100 or approx. 
+600 km with magnitudes between 4.1 and 5.0 on the Richter scale.
+
+```{r warning = FALSE, message = FALSE}
+library(data.table)
+library(ggplot2)
+
+quakes_melted <- melt(as.data.table(quakes[,3:4]), variable.name = "Metrics", 
+                      value.name = "Values")
+levels(quakes_melted$Metrics) <- c("Depth (km)","Magnitude (RM)")
+
+ggplot(aes(x= Values), data = quakes_melted) +
+        geom_histogram(fill = "blue", alpha = 0.6) +
+        labs(x = "", y = "Earthquakes") +
+        facet_grid(cols = vars(Metrics), scales = "free")
+```
