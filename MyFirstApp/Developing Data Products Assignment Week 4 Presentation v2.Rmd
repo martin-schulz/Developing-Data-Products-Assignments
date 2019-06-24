@@ -1,0 +1,45 @@
+---
+title: "My Shiny App"
+author: "Martin Schulz"
+date: "23/06/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Map of Earthquakes near Fiji
+
+This Shiny app allows the user to visually explore 1,000 earthquakes which 
+occured off Fiji since 1964.
+
+The user can filter the earthquakes displayed on the map by two metrics:
+
+* Richter Magnitude  
+* Depth (km)
+
+## Screenshot of Interactive Map
+
+
+![](images/Map_Screenshot.PNG)
+
+## Details
+
+* Areas with multiple earthquakes are shown as clusters with the label showing 
+how many earthquakes occured in that area.
+
+* Using the zoom controls ("+" and "-" buttons in the top left corner) or 
+clicking on any cluster will zoom the map, splitting clusters into smaller 
+clusters or single markers, depending on the zoom level.
+
+* Clicking on a marker shows the following information:
+    + Record number in earthquake data set
+    + Richter Magnitude
+    + Depth in km
+
+## The End {.flexbox .vcenter}
+
+<div class="centered">
+<font size="7">Thank you</font>
+</div>

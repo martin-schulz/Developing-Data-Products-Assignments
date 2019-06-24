@@ -1,0 +1,13 @@
+name: MyFirstApp
+title: MyFirstApp
+username:
+account: smartin
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 994967
+bundleId: 2173474
+url: https://smartin.shinyapps.io/MyFirstApp/
+when: 1561358034.37969
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Developing Data Products Assignment Week 4 Presentation.Rmd|Developing Data Products Assignment Week 4.Rmd|Developing_Data_Products_Assignment_Week_4.html
